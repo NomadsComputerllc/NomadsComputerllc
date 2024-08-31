@@ -1,0 +1,43 @@
+Current runner version: '2.319.1'https://github.com/NomadsComputerllc/NomadsComputerllc/tree/main
+Operating System
+  Ubuntu
+  22.04.4
+  LTS
+Runner Image
+  Image: ubuntu-22.04
+  Version: 20240825.1.0
+  Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240825.1/images/ubuntu/Ubuntu2204-Readme.md
+  Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240825.1
+Runner Image Provisioner
+  2.0.384.1
+GITHUB_TOKEN Permissions
+  Contents: read
+  Metadata: read
+Secret source: Actions
+Prepare workflow directory
+Prepare all required actions
+Getting action download info
+Download action repository 'actions/checkout@v4' (SHA:692973e3d937129bcbf40652eb9f2f61becf3332)
+Download action repository 'actions/setup-node@v4' (SHA:1e60f620b9541d16bece96c5465dc8ee9832be0b)
+Download action repository 'actions/upload-artifact@v3' (SHA:a8a3f3ad30e3422c9c7b888a15615d19a852ae32)
+Complete job name: build
+0s
+0s
+Run actions/setup-node@v4
+  with:
+    node-version: 20.x
+    cache: npm
+    always-auth: false
+    check-latest: false
+    token: ***
+  env:
+    AZURE_WEBAPP_NAME: your-app-name
+    AZURE_WEBAPP_PACKAGE_PATH: .
+    NODE_VERSION: 20.x
+Found in cache @ /opt/hostedtoolcache/node/20.17.0/x64
+Environment details
+  node: v20.17.0
+  npm: 10.8.2
+  yarn: 1.22.22
+/opt/hostedtoolcache/node/20.17.0/x64/bin/npm config get cache
+/home/runner/.npm
