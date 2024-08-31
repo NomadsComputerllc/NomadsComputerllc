@@ -1,5 +1,8 @@
 Current runner version: '2.319.1'
 Operating System
+  Ubuntu
+  22.04.4
+  LTS
 Runner Image
 Runner Image Provisioner
 GITHUB_TOKEN Permissions
@@ -11,101 +14,25 @@ Download action repository 'actions/checkout@v4' (SHA:692973e3d937129bcbf40652eb
 Download action repository 'actions/setup-node@v4' (SHA:1e60f620b9541d16bece96c5465dc8ee9832be0b)
 Download action repository 'actions/upload-artifact@v3' (SHA:a8a3f3ad30e3422c9c7b888a15615d19a852ae32)
 Complete job name: build
-Run actions/checkout@v4
-Syncing repository: NomadsComputerllc/NomadsComputerllc
-Getting Git version info
-Temporarily overriding HOME='/home/runner/work/_temp/ce3055ff-ae35-4b4c-bc71-14dbaaf3e97f' before making global git config changes
-Adding repository directory to the temporary git global config as a safe directory
-/usr/bin/git config --global --add safe.directory /home/runner/work/NomadsComputerllc/NomadsComputerllc
-Deleting the contents of '/home/runner/work/NomadsComputerllc/NomadsComputerllc'
-Initializing the repository
-Disabling automatic garbage collection
-Setting up auth
-Fetching the repository
-Determining the checkout info
-/usr/bin/git sparse-checkout disable
-/usr/bin/git config --local --unset-all extensions.worktreeConfig
-Checking out the ref
-/usr/bin/git log -1 --format='%H'
-'3e381bb0dac997003ac4b2d337f290d8b15655ae'
+
 Run actions/setup-node@v4
-  with:
-    node-version: 20.x
-    cache: npm
-    always-auth: false
-    check-latest: false
-    token: ***
-  env:
-    AZURE_WEBAPP_NAME: your-app-name
-    AZURE_WEBAPP_PACKAGE_PATH: .
-    NODE_VERSION: 20.x
 Found in cache @ /opt/hostedtoolcache/node/20.17.0/x64
 Environment details
-  node: v20.17.0
-  npm: 10.8.2
-  yarn: 1.22.22
 /opt/hostedtoolcache/node/20.17.0/x64/bin/npm config get cache
 /home/runner/.npm
-##[debug]Evaluating condition for step: 'Post Set up Node.js'
-##[debug]Evaluating: success()
-##[debug]Evaluating success:
-##[debug]=> false
-##[debug]Result: false
-##[debug]Evaluating condition for step: 'Post Run actions/checkout@v4'
-##[debug]Evaluating: always()
-##[debug]Evaluating always:
-##[debug]=> true
-##[debug]Result: true
-##[debug]Starting: Post Run actions/checkout@v4
-##[debug]Loading inputs
-##[debug]Evaluating: github.repository
-##[debug]Evaluating Index:
-##[debug]..Evaluating github:
-##[debug]..=> Object
-##[debug]..Evaluating String:
-##[debug]..=> 'repository'
-##[debug]=> 'NomadsComputerllc/NomadsComputerllc'
-##[debug]Result: 'NomadsComputerllc/NomadsComputerllc'
-##[debug]Evaluating: github.token
-##[debug]Evaluating Index:
-##[debug]..Evaluating github:
-##[debug]..=> Object
-##[debug]..Evaluating String:
-##[debug]..=> 'token'
-##[debug]=> '***'
-##[debug]Result: '***'
-##[debug]Loading env
+Error: Dependencies lock file is not found in /home/runner/work/NomadsComputerllc/NomadsComputerllc. Supported file patterns: package-lock.json,npm-shrinkwrap.json,yarn.lock
+
 Post job cleanup.
-##[debug]Getting git version
 /usr/bin/git version
 git version 2.46.0
-##[debug]0
-##[debug]git version 2.46.0
-##[debug]
-##[debug]Set git useragent to: git/2.46.0 (github-actions-checkout)
-::add-mask::***
-Temporarily overriding HOME='/home/runner/work/_temp/25c58095-c649-4dc2-8a50-0ee231d40e50' before making global git config changes
+Temporarily overriding HOME='/home/runner/work/_temp/dcde3e78-4214-4331-af41-364a15efa68b' before making global git config changes
 Adding repository directory to the temporary git global config as a safe directory
 /usr/bin/git config --global --add safe.directory /home/runner/work/NomadsComputerllc/NomadsComputerllc
-##[debug]0
-##[debug]
 /usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-##[debug]1
-##[debug]
 /usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-##[debug]0
-##[debug]
 /usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
 http.https://github.com/.extraheader
-##[debug]0
-##[debug]http.https://github.com/.extraheader
-##[debug]
 /usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-##[debug]0
-##[debug]
 /usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-##[debug]0
-##[debug]
-##[debug]Unsetting HOME override
-##[debug]Node Action run completed with exit code 0
-##[debug]Finishing: Post Run actions/checkout@v4
+
+Cleaning up orphan processes
