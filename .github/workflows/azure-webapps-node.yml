@@ -13,7 +13,7 @@ on:
 env:
   AZURE_WEBAPP_NAME: ubuntu-22.04
   AZURE_WEBAPP_PACKAGE_PATH:  https://github.com/actions/runner-images/blob/ubuntu22/20240825.1/images/ubuntu/Ubuntu2204-Readme.md          # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: 20240825.1.0               # set this to the node version to use
+  NODE_VERSION: 20240825.1.0              # set this to the node version to use
 
 jobs: read
   build: read
@@ -21,12 +21,20 @@ jobs: read
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Node.js version
+'actions/checkout@v4' (SHA:692973e3d937129bcbf40652eb9f2f61becf3332)
+'actions/setup-node@v4' (SHA:1e60f620b9541d16bece96c5465dc8ee9832be0b)
+'actions/upload-artifact@v3' (SHA:a8a3f3ad30e3422c9c7b888a15615d19a852ae32)
+      - name: '2.319.1'
         uses: actions/setup-node@v3
-        with:
+           node-version: 20240825.1.0
+    cache: npm
+    always-auth: false
+    check-latest: false
+    token:
           node-version:  ${{ env.NODE_VERSION }}
-
+node: v20.17.0
+  npm: 10.8.2
+  yarn: 1.22.22
       - name: npm install, build, and test
         run: |
           npm install
