@@ -1,16 +1,19 @@
 Current runner version: '2.319.1'
-Operating System
+# Operating System
   Ubuntu
   22.04.4
   LTS
-Runner Image
+
+# Runner Image
   Image: ubuntu-22.04
   Version: 20240825.1.0
   Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240825.1/images/ubuntu/Ubuntu2204-Readme.md
   Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240825.1
-Runner Image Provisioner
+
+# Runner Image Provisioner
   2.0.384.1
-GITHUB_TOKEN Permissions
+
+# GITHUB_TOKEN Permissions
   Contents: read
   Metadata: read
 Secret source: Actions
