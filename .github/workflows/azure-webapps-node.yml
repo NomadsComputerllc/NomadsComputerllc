@@ -1,78 +1,58 @@
-# This workflow will build and push a node.js application to an Azure Web App when a commit is pushed to your default branch.
-#
-# This workflow assumes you have already created the target Azure App Service web app.
-# For instructions see https://docs.microsoft.com/en-us/azure/app-service/quickstart-nodejs?tabs=linux&pivots=development-environment-cli
-#
-# To configure this workflow:
-#
-# 1. Download the Publish Profile for your Azure Web App. You can download this file from the Overview page of your Web App in the Azure Portal.
-#    For more information: https://docs.microsoft.com/en-us/azure/app-service/deploy-github-actions?tabs=applevel#generate-deployment-credentials
-#
-# 2. Create a secret in your repository named AZURE_WEBAPP_PUBLISH_PROFILE, paste the publish profile contents as the value of the secret.
-#    For instructions on obtaining the publish profile see: https://docs.microsoft.com/azure/app-service/deploy-github-actions#configure-the-github-secret
-#
-# 3. Change the value for the AZURE_WEBAPP_NAME. Optionally, change the AZURE_WEBAPP_PACKAGE_PATH and NODE_VERSION environment variables below.
-#
-# For more information on GitHub Actions for Azure: https://github.com/Azure/Actions
-# For more information on the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples
+- uses: actions/setup-node@v4
+  with:
+    # Version Spec of the version to use in SemVer notation.
+    # It also admits such aliases as lts, latest, nightly and canary builds
+    # Examples: 12.x, 10.15.1, >=10.15.0, lts/Hydrogen, 16-nightly, latest, node
+    node-version: ''
 
-on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+    # File containing the version Spec of the version to use.  Examples: package.json, .nvmrc, .node-version, .tool-versions.
+    # If node-version and node-version-file are both provided the action will use version from node-version. 
+    node-version-file: ''
 
-env:
-  AZURE_WEBAPP_NAME: your-app-name    # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '20.x'                # set this to the node version to use
+    # Set this option if you want the action to check for the latest available version 
+    # that satisfies the version spec.
+    # It will only get affect for lts Nodejs versions (12.x, >=10.15.0, lts/Hydrogen). 
+    # Default: false
+    check-latest: false
 
-permissions:
-  contents: read
+    # Target architecture for Node to use. Examples: x86, x64. Will use system architecture by default.
+    # Default: ''. The action use system architecture by default 
+    architecture: ''
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
+    # Used to pull node distributions from https://github.com/actions/node-versions. 
+    # Since there's a default, this is typically not supplied by the user. 
+    # When running this action on github.com, the default value is sufficient. 
+    # When running on GHES, you can pass a personal access token for github.com if you are experiencing rate limiting.
+    #
+    # We recommend using a service account with the least permissions necessary. Also
+    # when generating a new PAT, select the least scopes necessary.
+    #
+    # [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    #
+    # Default: ${{ github.server_url == 'https://github.com' && github.token || '' }}
+    token: ''
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: 'npm'
+    # Used to specify a package manager for caching in the default directory. Supported values: npm, yarn, pnpm.
+    # Package manager should be pre-installed
+    # Default: ''
+    cache: ''
 
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
+    # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. 
+    # It will generate hash from the target file for primary key. It works only If cache is specified.  
+    # Supports wildcards or a list of file names for caching multiple dependencies.
+    # Default: ''
+    cache-dependency-path: ''
 
-    - name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v3
-      with:
-        name: node-app
-        path: .
+    # Optional registry to set up for auth. Will set the registry in a project level .npmrc and .yarnrc file, 
+    # and set up auth to read in from env.NODE_AUTH_TOKEN.
+    # Default: ''
+    registry-url: ''
 
-  deploy:
-    permissions:
-      contents: none
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'Development'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    # Optional scope for authenticating against scoped registries. 
+    # Will fall back to the repository owner when using the GitHub Packages registry (https://npm.pkg.github.com/).
+    # Default: ''
+    scope: ''
 
-    steps:
-    - name: Download artifact from build job
-      uses: actions/download-artifact@v3
-      with:
-        name: node-app
-
-    - name: 'Deploy to Azure WebApp'
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+    # Set always-auth option in npmrc file.
+    # Default: ''
+    always-auth: ''
