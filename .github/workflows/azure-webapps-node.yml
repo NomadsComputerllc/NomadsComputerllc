@@ -11,7 +11,6 @@ Download action repository 'actions/checkout@v4' (SHA:692973e3d937129bcbf40652eb
 Download action repository 'actions/setup-node@v4' (SHA:1e60f620b9541d16bece96c5465dc8ee9832be0b)
 Download action repository 'actions/upload-artifact@v3' (SHA:a8a3f3ad30e3422c9c7b888a15615d19a852ae32)
 Complete job name: build
-1s
 Run actions/checkout@v4
 Syncing repository: NomadsComputerllc/NomadsComputerllc
 Getting Git version info
@@ -29,7 +28,6 @@ Determining the checkout info
 Checking out the ref
 /usr/bin/git log -1 --format='%H'
 '3e381bb0dac997003ac4b2d337f290d8b15655ae'
-9s
 Run actions/setup-node@v4
   with:
     node-version: 20.x
@@ -53,7 +51,6 @@ Environment details
 ##[debug]Evaluating success:
 ##[debug]=> false
 ##[debug]Result: false
-0s
 ##[debug]Evaluating condition for step: 'Post Run actions/checkout@v4'
 ##[debug]Evaluating: always()
 ##[debug]Evaluating always:
