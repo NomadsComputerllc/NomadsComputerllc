@@ -1,58 +1,112 @@
-- uses: actions/setup-node@v4
+Current runner version: '2.319.1'
+Operating System
+  Ubuntu
+  22.04.4
+  LTS
+Runner Image
+  Image: ubuntu-22.04
+  Version: 20240825.1.0
+  Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240825.1/images/ubuntu/Ubuntu2204-Readme.md
+  Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240825.1
+Runner Image Provisioner
+  2.0.384.1
+GITHUB_TOKEN Permissions
+  Contents: read
+  Metadata: read
+Secret source: Actions
+Prepare workflow directory
+Prepare all required actions
+Getting action download info
+Download action repository 'actions/checkout@v4' (SHA:692973e3d937129bcbf40652eb9f2f61becf3332)
+Download action repository 'actions/setup-node@v4' (SHA:1e60f620b9541d16bece96c5465dc8ee9832be0b)
+Download action repository 'actions/upload-artifact@v3' (SHA:a8a3f3ad30e3422c9c7b888a15615d19a852ae32)
+Complete job name: build
+0s
+Run actions/checkout@v4
   with:
-    # Version Spec of the version to use in SemVer notation.
-    # It also admits such aliases as lts, latest, nightly and canary builds
-    # Examples: 12.x, 10.15.1, >=10.15.0, lts/Hydrogen, 16-nightly, latest, node
-    node-version: ''
-
-    # File containing the version Spec of the version to use.  Examples: package.json, .nvmrc, .node-version, .tool-versions.
-    # If node-version and node-version-file are both provided the action will use version from node-version. 
-    node-version-file: ''
-
-    # Set this option if you want the action to check for the latest available version 
-    # that satisfies the version spec.
-    # It will only get affect for lts Nodejs versions (12.x, >=10.15.0, lts/Hydrogen). 
-    # Default: false
-    check-latest: false
-
-    # Target architecture for Node to use. Examples: x86, x64. Will use system architecture by default.
-    # Default: ''. The action use system architecture by default 
-    architecture: ''
-
-    # Used to pull node distributions from https://github.com/actions/node-versions. 
-    # Since there's a default, this is typically not supplied by the user. 
-    # When running this action on github.com, the default value is sufficient. 
-    # When running on GHES, you can pass a personal access token for github.com if you are experiencing rate limiting.
-    #
-    # We recommend using a service account with the least permissions necessary. Also
-    # when generating a new PAT, select the least scopes necessary.
-    #
-    # [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
-    #
-    # Default: ${{ github.server_url == 'https://github.com' && github.token || '' }}
-    token: ''
-
-    # Used to specify a package manager for caching in the default directory. Supported values: npm, yarn, pnpm.
-    # Package manager should be pre-installed
-    # Default: ''
-    cache: ''
-
-    # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. 
-    # It will generate hash from the target file for primary key. It works only If cache is specified.  
-    # Supports wildcards or a list of file names for caching multiple dependencies.
-    # Default: ''
-    cache-dependency-path: ''
-
-    # Optional registry to set up for auth. Will set the registry in a project level .npmrc and .yarnrc file, 
-    # and set up auth to read in from env.NODE_AUTH_TOKEN.
-    # Default: ''
-    registry-url: ''
-
-    # Optional scope for authenticating against scoped registries. 
-    # Will fall back to the repository owner when using the GitHub Packages registry (https://npm.pkg.github.com/).
-    # Default: ''
-    scope: ''
-
-    # Set always-auth option in npmrc file.
-    # Default: ''
-    always-auth: ''
+    repository: NomadsComputerllc/NomadsComputerllc
+    token: ***
+    ssh-strict: true
+    ssh-user: git
+    persist-credentials: true
+    clean: true
+    sparse-checkout-cone-mode: true
+    fetch-depth: 1
+    fetch-tags: false
+    show-progress: true
+    lfs: false
+    submodules: false
+    set-safe-directory: true
+  env:
+    AZURE_WEBAPP_NAME: your-app-name
+    AZURE_WEBAPP_PACKAGE_PATH: .
+    NODE_VERSION: 20.x
+Syncing repository: NomadsComputerllc/NomadsComputerllc
+Getting Git version info
+  Working directory is '/home/runner/work/NomadsComputerllc/NomadsComputerllc'
+  /usr/bin/git version
+  git version 2.46.0
+Temporarily overriding HOME='/home/runner/work/_temp/c24f0d7c-4c1a-4bb7-b555-b7eaeaee66a1' before making global git config changes
+Adding repository directory to the temporary git global config as a safe directory
+/usr/bin/git config --global --add safe.directory /home/runner/work/NomadsComputerllc/NomadsComputerllc
+Deleting the contents of '/home/runner/work/NomadsComputerllc/NomadsComputerllc'
+Initializing the repository
+  /usr/bin/git init /home/runner/work/NomadsComputerllc/NomadsComputerllc
+  hint: Using 'master' as the name for the initial branch. This default branch name
+  hint: is subject to change. To configure the initial branch name to use in all
+  hint: of your new repositories, which will suppress this warning, call:
+  hint:
+  hint: 	git config --global init.defaultBranch <name>
+  hint:
+  hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+  hint: 'development'. The just-created branch can be renamed via this command:
+  hint:
+  hint: 	git branch -m <name>
+  Initialized empty Git repository in /home/runner/work/NomadsComputerllc/NomadsComputerllc/.git/
+  /usr/bin/git remote add origin https://github.com/NomadsComputerllc/NomadsComputerllc
+Disabling automatic garbage collection
+  /usr/bin/git config --local gc.auto 0
+Setting up auth
+  /usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+  /usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+  /usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+  /usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+  /usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Fetching the repository
+  /usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3e381bb0dac997003ac4b2d337f290d8b15655ae:refs/remotes/origin/main
+  From https://github.com/NomadsComputerllc/NomadsComputerllc
+   * [new ref]         3e381bb0dac997003ac4b2d337f290d8b15655ae -> origin/main
+Determining the checkout info
+/usr/bin/git sparse-checkout disable
+/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Checking out the ref
+  /usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+  Switched to a new branch 'main'
+  branch 'main' set up to track 'origin/main'.
+/usr/bin/git log -1 --format='%H'
+'3e381bb0dac997003ac4b2d337f290d8b15655ae'
+4s
+Run actions/setup-node@v4
+Found in cache @ /opt/hostedtoolcache/node/20.17.0/x64
+Environment details
+/opt/hostedtoolcache/node/20.17.0/x64/bin/npm config get cache
+/home/runner/.npm
+Error: Dependencies lock file is not found in /home/runner/work/NomadsComputerllc/NomadsComputerllc. Supported file patterns: package-lock.json,npm-shrinkwrap.json,yarn.lock
+0s
+0s
+0s
+0s
+Post job cleanup.
+/usr/bin/git version
+git version 2.46.0
+Temporarily overriding HOME='/home/runner/work/_temp/883d534c-b2d3-4e38-84aa-459543a68a4b' before making global git config changes
+Adding repository directory to the temporary git global config as a safe directory
+/usr/bin/git config --global --add safe.directory /home/runner/work/NomadsComputerllc/NomadsComputerllc
+/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+http.https://github.com/.extraheader
+/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+0s
+Cleaning up orphan processes
