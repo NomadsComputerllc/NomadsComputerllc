@@ -1,4 +1,53 @@
+##[debug]Starting: Set up job
 Current runner version: '2.319.1'
+Operating System
+  Ubuntu
+  22.04.4
+  LTS
+Runner Image
+  Image: ubuntu-22.04
+  Version: 20240825.1.0
+  Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240825.1/images/ubuntu/Ubuntu2204-Readme.md
+  Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240825.1
+Runner Image Provisioner
+  2.0.384.1
+GITHUB_TOKEN Permissions
+  Contents: read
+  Metadata: read
+Secret source: Actions
+##[debug]Primary repository: NomadsComputerllc/NomadsComputerllc
+Prepare workflow directory
+##[debug]Creating pipeline directory: '/home/runner/work/NomadsComputerllc'
+##[debug]Creating workspace directory: '/home/runner/work/NomadsComputerllc/NomadsComputerllc'
+##[debug]Update context data
+##[debug]Evaluating job-level environment variables
+##[debug]Evaluating job container
+##[debug]Evaluating job service containers
+##[debug]Evaluating job defaults
+Prepare all required actions
+Getting action download info
+Download action repository 'actions/checkout@v4' (SHA:692973e3d937129bcbf40652eb9f2f61becf3332)
+##[debug]Copied action archive '/opt/actionarchivecache/actions_checkout/692973e3d937129bcbf40652eb9f2f61becf3332.tar.gz' to '/home/runner/work/_actions/_temp_ff976704-17d6-4c14-801f-be20ef6881c1/21d91198-cd93-4eca-b605-a34723a39c3e.tar.gz'
+##[debug]Unwrap 'actions-checkout-692973e' to '/home/runner/work/_actions/actions/checkout/v4'
+##[debug]Archive '/home/runner/work/_actions/_temp_ff976704-17d6-4c14-801f-be20ef6881c1/21d91198-cd93-4eca-b605-a34723a39c3e.tar.gz' has been unzipped into '/home/runner/work/_actions/actions/checkout/v4'.
+Download action repository 'actions/setup-node@v4' (SHA:1e60f620b9541d16bece96c5465dc8ee9832be0b)
+##[debug]Copied action archive '/opt/actionarchivecache/actions_setup-node/1e60f620b9541d16bece96c5465dc8ee9832be0b.tar.gz' to '/home/runner/work/_actions/_temp_2b9deb2f-2fc4-4c41-beb0-8daa67bca134/1df7fd67-8eb6-41f2-aaae-8065af9ae150.tar.gz'
+##[debug]Unwrap 'actions-setup-node-1e60f62' to '/home/runner/work/_actions/actions/setup-node/v4'
+##[debug]Archive '/home/runner/work/_actions/_temp_2b9deb2f-2fc4-4c41-beb0-8daa67bca134/1df7fd67-8eb6-41f2-aaae-8065af9ae150.tar.gz' has been unzipped into '/home/runner/work/_actions/actions/setup-node/v4'.
+Download action repository 'actions/upload-artifact@v3' (SHA:a8a3f3ad30e3422c9c7b888a15615d19a852ae32)
+##[debug]Copied action archive '/opt/actionarchivecache/actions_upload-artifact/a8a3f3ad30e3422c9c7b888a15615d19a852ae32.tar.gz' to '/home/runner/work/_actions/_temp_5fdb12da-7bd8-46a6-ae90-9fc9a2257a42/628f3ae1-e767-4ca1-8796-067248709657.tar.gz'
+##[debug]Unwrap 'actions-upload-artifact-a8a3f3a' to '/home/runner/work/_actions/actions/upload-artifact/v3'
+##[debug]Archive '/home/runner/work/_actions/_temp_5fdb12da-7bd8-46a6-ae90-9fc9a2257a42/628f3ae1-e767-4ca1-8796-067248709657.tar.gz' has been unzipped into '/home/runner/work/_actions/actions/upload-artifact/v3'.
+##[debug]action.yml for action: '/home/runner/work/_actions/actions/checkout/v4/action.yml'.
+##[debug]action.yml for action: '/home/runner/work/_actions/actions/setup-node/v4/action.yml'.
+##[debug]action.yml for action: '/home/runner/work/_actions/actions/upload-artifact/v3/action.yml'.
+##[debug]Set step '__actions_checkout' display name to: 'Run actions/checkout@v4'
+##[debug]Set step '__actions_setup-node' display name to: 'Set up Node.js'
+##[debug]Set step '__run' display name to: 'npm install, build, and test'
+##[debug]Set step '__actions_upload-artifact' display name to: 'Upload artifact for deployment job'
+Complete job name: build
+##[debug]Collect running processes for tracking orphan processes.
+##[debug]Finishing: Set up jobCurrent runner version: '2.319.1'
 # Operating System
   Ubuntu
   22.04.4
