@@ -4,8 +4,15 @@ Operating System
   22.04.4
   LTS
 Runner Image
+  Image: ubuntu-22.04
+  Version: 20240825.1.0
+  Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240825.1/images/ubuntu/Ubuntu2204-Readme.md
+  Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240825.1
 Runner Image Provisioner
+  2.0.384.1
 GITHUB_TOKEN Permissions
+  Contents: read
+  Metadata: read
 Secret source: Actions
 Prepare workflow directory
 Prepare all required actions
@@ -14,7 +21,6 @@ Download action repository 'actions/checkout@v4' (SHA:692973e3d937129bcbf40652eb
 Download action repository 'actions/setup-node@v4' (SHA:1e60f620b9541d16bece96c5465dc8ee9832be0b)
 Download action repository 'actions/upload-artifact@v3' (SHA:a8a3f3ad30e3422c9c7b888a15615d19a852ae32)
 Complete job name: build
-
 Run actions/setup-node@v4
 Found in cache @ /opt/hostedtoolcache/node/20.17.0/x64
 Environment details
